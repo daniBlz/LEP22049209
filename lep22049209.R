@@ -11,7 +11,7 @@ ds<- ds %>% clean_names() %>% type_convert(locale = locale(grouping_mark = '.'))
 
 mean_price <-ds %>% select(price,province) %>% drop_na() %>% group_by(province) %>% summarise(mean(price)) 
 
-ds_2 <- ds %>% mutate(americano = model %in% c('DODGE','CHEVROLET','FORD','TESLA','GMC')) 
+ds_2 <- ds %>% mutate(americano = make %in% c('DODGE','CHEVROLET','FORD','TESLA','GMC')) 
 
 write.csv(ds, 'C:/Users/danie/OneDrive/Documentos/Importante/Uni/DataScience/Tercero/S1/lpe22049209//ds22049209.csv')
 
